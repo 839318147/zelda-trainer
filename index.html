@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>塞尔达修改器 · 更新站</title>
+<style>
+  body { background:#111318; color:#e6e8ee; font-family:"Microsoft YaHei UI",sans-serif; margin:0; padding:32px; }
+  h1 { font-size:22px; margin:0 0 6px; }
+  .sub { color:#8b8e96; font-size:13px; margin-bottom:24px; }
+  .card { background:#1b1e25; border-radius:10px; padding:20px 24px; margin-bottom:18px; }
+  .ver { font-size:28px; color:#d67864; font-weight:600; }
+  .meta { color:#9a9da6; font-size:13px; line-height:1.9; }
+  code { background:#24272f; padding:2px 6px; border-radius:4px; font-size:12px; word-break:break-all; }
+  a.btn { display:inline-block; margin-top:14px; background:#d64a38; color:#fff; text-decoration:none;
+          padding:10px 22px; border-radius:6px; font-size:14px; }
+  a.btn:hover { background:#e25a46; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th,td { text-align:left; padding:7px 8px; border-bottom:1px solid #2a2d35; }
+  th { color:#9a9da6; font-weight:500; }
+  .hint { color:#7c7f88; font-size:12px; margin-top:16px; line-height:1.8; }
+</style>
+</head>
+<body>
+  <h1>塞尔达修改器 · 更新站</h1>
+  <div class="sub">Savage Wind Recomp Trainer · 本地更新服务</div>
+
+  <div class="card">
+    <div class="ver">2026.10.29.0043</div>
+    <div class="meta">
+      构建时间：2026-10-29 00:43:02<br>
+      文件大小：103.5 KB<br>
+      更新说明：更新地址可配置(update.txt)<br>
+      SHA256：<code>6f4da57917965079a1befad057c68f3442ed1e231887003c304a155ab7216901</code>
+    </div>
+    <a class="btn" href="SavageWindTrainer.exe">下载最新版</a>
+    <a class="btn" href="源码.zip" style="background:#3a3f4a">下载源码</a>
+  </div>
+
+  <div class="card">
+    <div class="meta" style="margin-bottom:10px">历史版本</div>
+    <table>
+      <tr><th>版本</th><th>大小</th><th>说明</th></tr>
+      <tr><td>2026.10.29.0034</td><td>100.5 KB</td><td>批量多选物品 + 弓耐久修复</td></tr>
+<tr><td>2026.10.29.0039</td><td>103.5 KB</td><td>新增检查更新按钮</td></tr>
+<tr><td>2026.10.29.0039</td><td>103.5 KB</td><td></td></tr>
+<tr><td>2026.10.29.0043</td><td>103.5 KB</td><td>更新地址可配置(update.txt)</td></tr>
+
+    </table>
+  </div>
+
+  <div class="hint">
+    修改器里点「检查更新」会自动读取 <code>version.json</code> 并比对 SHA256，有新版就自动下载替换。<br>
+    服务地址：<code>http://127.0.0.1:8080/</code>（本机）· 服务脚本：<code>serve.ps1</code>
+  </div>
+</body>
+</html>
