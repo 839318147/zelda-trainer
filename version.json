@@ -1,8 +1,8 @@
 {
-    "version":  "2026.10.29.0043",
-    "sha256":  "6f4da57917965079a1befad057c68f3442ed1e231887003c304a155ab7216901",
-    "sizeKB":  103.5,
-    "builtAt":  "2026-10-29 00:43:02",
-    "note":  "更新地址可配置(update.txt)",
+    "version":  "2026.10.29.0056",
+    "sha256":  "8fe9160cd1d142029dc0dec4e33d52089ebc845e2a7038fdcd004d28cc103f31",
+    "sizeKB":  104,
+    "builtAt":  "2026-10-29 00:56:41",
+    "note":  "修复检查更新 TLS1.2 握手失败",
     "url":  "http://127.0.0.1:8080/SavageWindTrainer.exe"
 }
