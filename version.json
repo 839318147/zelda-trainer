@@ -3,6 +3,6 @@
     "sha256":  "8fe9160cd1d142029dc0dec4e33d52089ebc845e2a7038fdcd004d28cc103f31",
     "sizeKB":  104,
     "builtAt":  "2026-10-29 00:56:41",
-    "note":  "一键发布测试：token 自动上传",
-    "url":  "http://127.0.0.1:8080/SavageWindTrainer.exe"
+    "note":  "常规更新",
+    "url":  "https://839318147.github.io/zelda-trainer/SavageWindTrainer.exe"
 }
