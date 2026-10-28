@@ -22,35 +22,54 @@
 </head>
 <body>
   <h1>塞尔达修改器 · 更新站</h1>
-  <div class="sub">Savage Wind Recomp Trainer · 本地更新服务</div>
+  <div class="sub">Savage Wind Recomp Trainer · 自动读取最新版本信息</div>
 
   <div class="card">
-    <div class="ver">2026.10.29.0043</div>
-    <div class="meta">
-      构建时间：2026-10-29 00:43:02<br>
-      文件大小：103.5 KB<br>
-      更新说明：更新地址可配置(update.txt)<br>
-      SHA256：<code>6f4da57917965079a1befad057c68f3442ed1e231887003c304a155ab7216901</code>
-    </div>
+    <div class="ver" id="ver">读取中…</div>
+    <div class="meta" id="meta"></div>
     <a class="btn" href="SavageWindTrainer.exe">下载最新版</a>
     <a class="btn" href="源码.zip" style="background:#3a3f4a">下载源码</a>
   </div>
 
   <div class="card">
-    <div class="meta" style="margin-bottom:10px">历史版本</div>
-    <table>
-      <tr><th>版本</th><th>大小</th><th>说明</th></tr>
-      <tr><td>2026.10.29.0034</td><td>100.5 KB</td><td>批量多选物品 + 弓耐久修复</td></tr>
-<tr><td>2026.10.29.0039</td><td>103.5 KB</td><td>新增检查更新按钮</td></tr>
-<tr><td>2026.10.29.0039</td><td>103.5 KB</td><td></td></tr>
-<tr><td>2026.10.29.0043</td><td>103.5 KB</td><td>更新地址可配置(update.txt)</td></tr>
-
-    </table>
+    <div class="meta" style="margin-bottom:10px">更新历史</div>
+    <table id="hist"><tr><th>版本</th><th>大小</th><th>说明</th></tr></table>
   </div>
 
   <div class="hint">
-    修改器里点「检查更新」会自动读取 <code>version.json</code> 并比对 SHA256，有新版就自动下载替换。<br>
-    服务地址：<code>http://127.0.0.1:8080/</code>（本机）· 服务脚本：<code>serve.ps1</code>
+    修改器里点「检查更新」会自动读取 <code>version.json</code> 并比对 SHA256，有新版就下载替换。<br>
+    本页内容全部来自 <code>version.json</code> 和 <code>history.txt</code>，无需改动本文件。
   </div>
+
+<script>
+(async function () {
+  try {
+    const r = await fetch('version.json?t=' + Date.now());
+    const j = await r.json();
+    document.getElementById('ver').textContent = j.version;
+    document.getElementById('meta').innerHTML =
+      '构建时间：' + j.builtAt + '<br>' +
+      '文件大小：' + j.sizeKB + ' KB<br>' +
+      '更新说明：' + (j.note || '') + '<br>' +
+      'SHA256：<code>' + j.sha256 + '</code>';
+  } catch (e) {
+    document.getElementById('ver').textContent = '读取 version.json 失败';
+    document.getElementById('meta').textContent = e;
+  }
+  try {
+    const r2 = await fetch('history.txt?t=' + Date.now());
+    if (!r2.ok) return;
+    const txt = await r2.text();
+    const tbody = document.getElementById('hist');
+    txt.trim().split('\n').slice(-30).reverse().forEach(function (line) {
+      const p = line.split('\t');
+      if (p.length < 3) return;
+      const tr = document.createElement('tr');
+      p.forEach(function (v) { const td = document.createElement('td'); td.textContent = v; tr.appendChild(td); });
+      tbody.appendChild(tr);
+    });
+  } catch (e) { }
+})();
+</script>
 </body>
 </html>
