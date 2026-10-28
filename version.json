@@ -1,8 +1,8 @@
 {
-    "version":  "2026.10.29.0129",
-    "sha256":  "9386b74cdc9ff1f07a5896ff4d8d049d64653551b7187b5dbf5cb01439f65b5f",
-    "sizeKB":  106,
-    "builtAt":  "2026-10-29 01:29:43",
-    "note":  "新增无限材料 + 存档备份/还原",
+    "version":  "2026.10.29.0133",
+    "sha256":  "98e05569b3600b5c3c4d800530198e5fdf662b509967f4262cb94e2b754a57c6",
+    "sizeKB":  107,
+    "builtAt":  "2026-10-29 01:33:36",
+    "note":  "新增存档设时间",
     "url":  "https://839318147.github.io/zelda-trainer/SavageWindTrainer.exe"
 }
